@@ -1,0 +1,23 @@
+# Robots.txt for Brampton Detail Co.
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+
+# Sitemap location
+Sitemap: https://bramptoncar-kzthwk4n.manus.space/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

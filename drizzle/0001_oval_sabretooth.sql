@@ -1,0 +1,21 @@
+CREATE TABLE `orders` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`customerName` varchar(255) NOT NULL,
+	`customerEmail` varchar(320) NOT NULL,
+	`customerPhone` varchar(20) NOT NULL,
+	`vehicleType` varchar(50) NOT NULL,
+	`servicePackage` varchar(100) NOT NULL,
+	`price` int NOT NULL,
+	`paymentMethod` enum('etransfer','cash') NOT NULL,
+	`promoCode` varchar(50),
+	`discountAmount` int DEFAULT 0,
+	`finalPrice` int NOT NULL,
+	`serviceDate` varchar(50) NOT NULL,
+	`serviceTime` varchar(50) NOT NULL,
+	`address` text NOT NULL,
+	`specialRequests` text,
+	`status` enum('pending','completed','cancelled') NOT NULL DEFAULT 'pending',
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `orders_id` PRIMARY KEY(`id`)
+);
